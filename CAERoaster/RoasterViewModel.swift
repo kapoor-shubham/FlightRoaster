@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreData
 
 class RoasterViewModel {
     
@@ -46,32 +47,8 @@ class RoasterViewModel {
     
     private func saveDataInDB(responseModel: RoasterAPIResponseModal, completion: @escaping(_ dataSaved: Bool) -> Void) {
         
-        let dispatchGroup = DispatchGroup()
-        
-        responseModel.forEach { item in
-            let dbObj = Roaster()
-            dbObj.flightnr = item.flightnr
-            dbObj.date = item.date
-            dbObj.aircraftType = item.aircraftType
-            dbObj.tail = item.tail
-            dbObj.departure = item.departure
-            dbObj.destination = item.destination
-            dbObj.timeDepart = item.timeDepart
-            dbObj.timeArrive = item.timeArrive
-            dbObj.dutyID = item.dutyID
-            dbObj.dutyCode = item.dutyCode
-            dbObj.firstOfficer = item.firstOfficer
-            dbObj.captain = item.captain
-            dbObj.flightAttendant = item.flightnr
-            
-            dispatchGroup.enter()
-            DatabaseManager.sharedManager.saveData(dbObject: dbObj) { saved, error in
-                dispatchGroup.leave()
-            }
-        }
-        
-        dispatchGroup.notify(queue: DispatchQueue.main) {
-            completion(true)
+        Roaster.saveObjInDB(apiResponse: responseModel) { (success) in
+            self.fetchData?(true)
         }
     }
 }

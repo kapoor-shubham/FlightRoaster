@@ -29,7 +29,7 @@ class DatabaseManager {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         request.returnsObjectsAsFaults = false
         do {
-            let result = try context.fetch(request) as? T
+            let result = try context.fetch(request) as? [Roaster]
             completion(T.self as! T)
         } catch {
             print("Fetching data Failed")
