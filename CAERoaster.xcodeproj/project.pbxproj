@@ -27,6 +27,7 @@
 		CE257D09270B424E00BB0828 /* URLEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE257D08270B424E00BB0828 /* URLEndpoints.swift */; };
 		CE257D1B270B46ED00BB0828 /* Roaster+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE257D19270B46ED00BB0828 /* Roaster+CoreDataClass.swift */; };
 		CE257D1C270B46ED00BB0828 /* Roaster+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE257D1A270B46ED00BB0828 /* Roaster+CoreDataProperties.swift */; };
+		CEAB1E46270B62BA001D8E4A /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAB1E45270B62BA001D8E4A /* DatabaseManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		CE257D08270B424E00BB0828 /* URLEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLEndpoints.swift; sourceTree = "<group>"; };
 		CE257D19270B46ED00BB0828 /* Roaster+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Roaster+CoreDataClass.swift"; sourceTree = "<group>"; };
 		CE257D1A270B46ED00BB0828 /* Roaster+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Roaster+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CEAB1E45270B62BA001D8E4A /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				CE257D08270B424E00BB0828 /* URLEndpoints.swift */,
 				CE257CF1270B40DE00BB0828 /* RoasterAPIResponseModal.swift */,
 				CE257CF2270B40DE00BB0828 /* RoasterViewModel.swift */,
+				CEAB1E45270B62BA001D8E4A /* DatabaseManager.swift */,
 				CE257CF6270B40E600BB0828 /* Networking */,
 				CE257D1D270B46F700BB0828 /* CoreData Models */,
 				CE257CDF270B40AC00BB0828 /* Main.storyboard */,
@@ -227,6 +230,7 @@
 				CE257CF3270B40DE00BB0828 /* Constants.swift in Sources */,
 				CE257D04270B40E600BB0828 /* EndPoint.swift in Sources */,
 				CE257CE4270B40AC00BB0828 /* CAERoaster.xcdatamodeld in Sources */,
+				CEAB1E46270B62BA001D8E4A /* DatabaseManager.swift in Sources */,
 				CE257CDE270B40AC00BB0828 /* RoasterViewController.swift in Sources */,
 				CE257CF5270B40DE00BB0828 /* RoasterViewModel.swift in Sources */,
 				CE257D1B270B46ED00BB0828 /* Roaster+CoreDataClass.swift in Sources */,

@@ -11,5 +11,5 @@ import CoreData
 
 @objc(Roaster)
 public class Roaster: NSManagedObject {
-
+    
 }

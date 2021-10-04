@@ -9,15 +9,15 @@ import Foundation
 
 // MARK: - RoasterModalElement
 struct RoasterModalElement: Codable {
-    let flightnr, date: String
-    let aircraftType: AircraftType
-    let tail, departure, destination, timeDepart: String
-    let timeArrive: String
-    let dutyID: DutyID
-    let dutyCode: DutyCode
-    let captain: Captain
-    let firstOfficer: FirstOfficer
-    let flightAttendant: FlightAttendant
+    let flightnr, date: String?
+    let aircraftType: String?
+    let tail, departure, destination, timeDepart: String?
+    let timeArrive: String?
+    let dutyID: String?
+    let dutyCode: String?
+    let captain: String?
+    let firstOfficer: String?
+    let flightAttendant: String?
 
     enum CodingKeys: String, CodingKey {
         case flightnr = "Flightnr"
@@ -34,46 +34,6 @@ struct RoasterModalElement: Codable {
         case firstOfficer = "First Officer"
         case flightAttendant = "Flight Attendant"
     }
-}
-
-enum AircraftType: String, Codable {
-    case airbusA330 = "Airbus A330"
-    case airbusA380 = "Airbus A380"
-    case b737400 = "B737-400"
-    case empty = ""
-    case the748800E = "748-800E"
-}
-
-enum Captain: String, Codable {
-    case empty = ""
-    case richardVersluis = "Richard Versluis"
-}
-
-enum DutyCode: String, Codable {
-    case flight = "FLIGHT"
-    case layover = "LAYOVER"
-    case off = "OFF"
-    case positioning = "POSITIONING"
-    case standby = "Standby"
-}
-
-enum DutyID: String, Codable {
-    case dutyIDDO = "DO"
-    case flt = "FLT"
-    case ofd = "OFD"
-    case pos = "POS"
-    case sby = "SBY"
-}
-
-enum FirstOfficer: String, Codable {
-    case empty = ""
-    case jeroenDerwort = "Jeroen Derwort"
-    case karlJenkins = "Karl Jenkins"
-}
-
-enum FlightAttendant: String, Codable {
-    case empty = ""
-    case lucyStone = "Lucy Stone"
 }
 
 typealias RoasterAPIResponseModal = [RoasterModalElement]
