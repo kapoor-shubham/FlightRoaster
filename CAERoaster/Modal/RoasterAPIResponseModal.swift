@@ -36,4 +36,12 @@ struct RoasterModalElement: Codable {
     }
 }
 
+enum DutyCode: String, Codable {
+    case flight = "FLIGHT"
+    case layover = "LAYOVER"
+    case off = "OFF"
+    case positioning = "POSITIONING"
+    case standby = "Standby"
+}
+
 typealias RoasterAPIResponseModal = [RoasterModalElement]

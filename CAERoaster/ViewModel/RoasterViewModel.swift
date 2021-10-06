@@ -9,7 +9,8 @@ import Foundation
 
 class RoasterViewModel {
     
-    var fetchData:((_ success: Bool) -> Void)?
+    var dataFetchReady:((_ success: Bool) -> Void)?
+    var roasterDBResponse:((_ roasterDBModel: [Date: [Roaster]], _ dateArray: [Date]) -> Void)?
     
     /// Get RoasterData
     func getRoasterData() {
@@ -26,14 +27,26 @@ class RoasterViewModel {
         DispatchQueue.main.async {
             Roaster.fetchEntity { dbModel in
                 if let model = dbModel {
-                    self.sortDBElements(roasterArr: model)
+//                    self.sortDBElements(roasterArr: model)
+                    self.makeExecutableDBReponse(roasterArr: model)
                 }
             }
         }
     }
     
-    private func sortDBElements(roasterArr: [Roaster]) {
+    /// Fetch data from DB and format according to UI need
+    private func makeExecutableDBReponse(roasterArr: [Roaster]) {
+        var formatedRoasterModel = [Date: [Roaster]]()
+        var roasterDateArray = [Date]()
+        roasterArr.forEach { item in
+            if let date = item.date {
+                formatedRoasterModel[date] != nil ? formatedRoasterModel[date]?.append(item) : (formatedRoasterModel[date] = [item])
+                roasterDateArray.append(date)
+            }
+        }
         
+        roasterDateArray = Array(Set(roasterDateArray))
+        self.roasterDBResponse?(formatedRoasterModel, roasterDateArray)
     }
     
     /// Call APi to get Data
@@ -43,7 +56,7 @@ class RoasterViewModel {
 //        networkManager.apiRequest(for: RoasterAPIResponseModal.self, from: .init(path: URLEndpoints.roasterURL, httpMethod: .get)) { (response) in
 //            switch response {
 //            case .failure:
-//                self.fetchData?(true)
+//                self.dataFetchReady?(true)
 //            case .success(let responseModel) :
 //                if let model = responseModel {
 //                    self.updatePreviousData(responseModel: model)
@@ -60,7 +73,7 @@ class RoasterViewModel {
                 let jsonData = try decoder.decode(RoasterAPIResponseModal.self, from: data)
                 self.updatePreviousData(responseModel: jsonData)
             } catch {
-                self.fetchData?(true)
+                self.dataFetchReady?(true)
             }
         }
     }
@@ -70,7 +83,7 @@ class RoasterViewModel {
         DispatchQueue.main.async {
             Roaster.deleteEntity { _ in
                 self.saveDataInDB(responseModel: responseModel) { responseSaveInDB in
-                    self.fetchData?(true)
+                    self.dataFetchReady?(true)
                 }
             }
         }

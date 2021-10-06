@@ -27,7 +27,10 @@
 		CE257D09270B424E00BB0828 /* URLEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE257D08270B424E00BB0828 /* URLEndpoints.swift */; };
 		CE257D1B270B46ED00BB0828 /* Roaster+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE257D19270B46ED00BB0828 /* Roaster+CoreDataClass.swift */; };
 		CE257D1C270B46ED00BB0828 /* Roaster+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE257D1A270B46ED00BB0828 /* Roaster+CoreDataProperties.swift */; };
-		CEAB1E46270B62BA001D8E4A /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAB1E45270B62BA001D8E4A /* DatabaseManager.swift */; };
+		CEAEC746270DB02E00B664B0 /* DummyJson.json in Resources */ = {isa = PBXBuildFile; fileRef = CEAEC745270DB02E00B664B0 /* DummyJson.json */; };
+		CEAEC74C270DB4DB00B664B0 /* RoasterViewController+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEC74B270DB4DB00B664B0 /* RoasterViewController+UITableView.swift */; };
+		CEAEC74E270DB52F00B664B0 /* RoasterTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEC74D270DB52F00B664B0 /* RoasterTableCell.swift */; };
+		CEF22081270DE16A003F3066 /* DateFormatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF22080270DE169003F3066 /* DateFormatable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,7 +56,10 @@
 		CE257D08270B424E00BB0828 /* URLEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLEndpoints.swift; sourceTree = "<group>"; };
 		CE257D19270B46ED00BB0828 /* Roaster+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Roaster+CoreDataClass.swift"; sourceTree = "<group>"; };
 		CE257D1A270B46ED00BB0828 /* Roaster+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Roaster+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		CEAB1E45270B62BA001D8E4A /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		CEAEC745270DB02E00B664B0 /* DummyJson.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DummyJson.json; sourceTree = "<group>"; };
+		CEAEC74B270DB4DB00B664B0 /* RoasterViewController+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RoasterViewController+UITableView.swift"; sourceTree = "<group>"; };
+		CEAEC74D270DB52F00B664B0 /* RoasterTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterTableCell.swift; sourceTree = "<group>"; };
+		CEF22080270DE169003F3066 /* DateFormatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,12 +94,11 @@
 			children = (
 				CE257CD9270B40AC00BB0828 /* AppDelegate.swift */,
 				CE257CDB270B40AC00BB0828 /* SceneDelegate.swift */,
-				CE257CDD270B40AC00BB0828 /* RoasterViewController.swift */,
-				CE257CF0270B40DE00BB0828 /* Constants.swift */,
-				CE257D08270B424E00BB0828 /* URLEndpoints.swift */,
-				CE257CF1270B40DE00BB0828 /* RoasterAPIResponseModal.swift */,
-				CE257CF2270B40DE00BB0828 /* RoasterViewModel.swift */,
-				CEAB1E45270B62BA001D8E4A /* DatabaseManager.swift */,
+				CEAEC747270DB47800B664B0 /* ViewController */,
+				CEAEC749270DB49E00B664B0 /* Utility */,
+				CEAEC74A270DB4AA00B664B0 /* Modal */,
+				CEAEC748270DB48100B664B0 /* ViewModel */,
+				CEAEC745270DB02E00B664B0 /* DummyJson.json */,
 				CE257CF6270B40E600BB0828 /* Networking */,
 				CE257D1D270B46F700BB0828 /* CoreData Models */,
 				CE257CDF270B40AC00BB0828 /* Main.storyboard */,
@@ -112,6 +117,7 @@
 				CE257CFA270B40E600BB0828 /* NetworkManager.swift */,
 				CE257CFB270B40E600BB0828 /* Endpoint */,
 				CE257CFD270B40E600BB0828 /* Rechability.swift */,
+				CE257D08270B424E00BB0828 /* URLEndpoints.swift */,
 				CE257CFE270B40E600BB0828 /* Service */,
 			);
 			path = Networking;
@@ -150,6 +156,41 @@
 				CE257D1A270B46ED00BB0828 /* Roaster+CoreDataProperties.swift */,
 			);
 			path = "CoreData Models";
+			sourceTree = "<group>";
+		};
+		CEAEC747270DB47800B664B0 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CE257CDD270B40AC00BB0828 /* RoasterViewController.swift */,
+				CEAEC74B270DB4DB00B664B0 /* RoasterViewController+UITableView.swift */,
+				CEAEC74D270DB52F00B664B0 /* RoasterTableCell.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		CEAEC748270DB48100B664B0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CE257CF2270B40DE00BB0828 /* RoasterViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CEAEC749270DB49E00B664B0 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				CE257CF0270B40DE00BB0828 /* Constants.swift */,
+				CEF22080270DE169003F3066 /* DateFormatable.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		CEAEC74A270DB4AA00B664B0 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				CE257CF1270B40DE00BB0828 /* RoasterAPIResponseModal.swift */,
+			);
+			path = Modal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +250,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEAEC746270DB02E00B664B0 /* DummyJson.json in Resources */,
 				CE257CE9270B40B600BB0828 /* LaunchScreen.storyboard in Resources */,
 				CE257CE6270B40B600BB0828 /* Assets.xcassets in Resources */,
 				CE257CE1270B40AC00BB0828 /* Main.storyboard in Resources */,
@@ -224,14 +266,15 @@
 			files = (
 				CE257D05270B40E600BB0828 /* Rechability.swift in Sources */,
 				CE257D02270B40E600BB0828 /* Result.swift in Sources */,
+				CEF22081270DE16A003F3066 /* DateFormatable.swift in Sources */,
 				CE257D07270B40E600BB0828 /* HTTPMethod.swift in Sources */,
 				CE257CF4270B40DE00BB0828 /* RoasterAPIResponseModal.swift in Sources */,
 				CE257D03270B40E600BB0828 /* NetworkManager.swift in Sources */,
 				CE257CF3270B40DE00BB0828 /* Constants.swift in Sources */,
 				CE257D04270B40E600BB0828 /* EndPoint.swift in Sources */,
 				CE257CE4270B40AC00BB0828 /* CAERoaster.xcdatamodeld in Sources */,
-				CEAB1E46270B62BA001D8E4A /* DatabaseManager.swift in Sources */,
 				CE257CDE270B40AC00BB0828 /* RoasterViewController.swift in Sources */,
+				CEAEC74C270DB4DB00B664B0 /* RoasterViewController+UITableView.swift in Sources */,
 				CE257CF5270B40DE00BB0828 /* RoasterViewModel.swift in Sources */,
 				CE257D1B270B46ED00BB0828 /* Roaster+CoreDataClass.swift in Sources */,
 				CE257D06270B40E600BB0828 /* APIClient.swift in Sources */,
@@ -239,6 +282,7 @@
 				CE257D09270B424E00BB0828 /* URLEndpoints.swift in Sources */,
 				CE257D01270B40E600BB0828 /* APIError.swift in Sources */,
 				CE257CDA270B40AC00BB0828 /* AppDelegate.swift in Sources */,
+				CEAEC74E270DB52F00B664B0 /* RoasterTableCell.swift in Sources */,
 				CE257CDC270B40AC00BB0828 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

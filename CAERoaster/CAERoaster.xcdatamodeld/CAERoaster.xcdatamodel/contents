@@ -3,7 +3,7 @@
     <entity name="Roaster" representedClassName="Roaster" syncable="YES">
         <attribute name="aircraftType" optional="YES" attributeType="String"/>
         <attribute name="captain" optional="YES" attributeType="String"/>
-        <attribute name="date" optional="YES" attributeType="String"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="departure" optional="YES" attributeType="String"/>
         <attribute name="destination" optional="YES" attributeType="String"/>
         <attribute name="dutyCode" optional="YES" attributeType="String"/>

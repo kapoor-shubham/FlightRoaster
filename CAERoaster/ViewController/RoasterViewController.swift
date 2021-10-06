@@ -9,7 +9,11 @@ import UIKit
 
 class RoasterViewController: UIViewController {
     
+    @IBOutlet weak var tableRoaster: UITableView!
+    
     lazy var viewModel = RoasterViewModel()
+    var roasterModel = [Date: [Roaster]]()
+    var roasterDateArray = [Date]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,8 +23,16 @@ class RoasterViewController: UIViewController {
     }
     
     func setupVMCallbacks() {
-        viewModel.fetchData = { (success) in
+        viewModel.dataFetchReady = { (success) in
             self.viewModel.getRoasterDataFromDB()
+        }
+        
+        viewModel.roasterDBResponse = { (model, dateArray) in
+            DispatchQueue.main.async {
+                self.roasterModel = model
+                self.roasterDateArray = dateArray
+                self.tableRoaster.reloadData()
+            }
         }
     }
 }

@@ -17,7 +17,7 @@ extension Roaster {
     }
 
     @NSManaged public var flightnr: String?
-    @NSManaged public var date: String?
+    @NSManaged public var date: Date?
     @NSManaged public var aircraftType: String?
     @NSManaged public var tail: String?
     @NSManaged public var departure: String?
